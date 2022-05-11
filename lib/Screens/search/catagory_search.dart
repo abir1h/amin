@@ -2,6 +2,7 @@ import 'package:amin_diagonastic/Screens/search/Doctor_profile.dart';
 import 'package:amin_diagonastic/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 class catagory extends StatefulWidget {
   final String catagry;
   catagory({required this.catagry});
@@ -12,10 +13,11 @@ class catagory extends StatefulWidget {
 
 class _catagoryState extends State<catagory> {
   @override
-  Widget build(BuildContext context) { var height = MediaQuery.of(context).size.height;
-  var width = MediaQuery.of(context).size.width;
-    return SafeArea(child: Scaffold(
-
+  Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
+    return SafeArea(
+        child: Scaffold(
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.only(left: 18.0),
@@ -23,49 +25,68 @@ class _catagoryState extends State<catagory> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               IconButton(
-                icon: Icon(Icons.arrow_back_ios,color: Colors.black,), onPressed: (){Navigator.pop(context);},
+                icon: const Icon(
+                  Icons.arrow_back_ios,
+                  color: Colors.black,
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.all(8.0),
                 child: Text(
                   "Dentist",
                   style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 25),
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25,
+                  ),
                 ),
               ),
-             Padding(
-               padding: const EdgeInsets.all(8.0),
-               child: Row(
-                 children: [
-                   Container(
-                     height: height/20,
-                     width: width/1.4,
-                     decoration: BoxDecoration(
-                       color: Colors.white,
-                       borderRadius: BorderRadius.circular(20),
-                       border: Border.all(color: AppColors.base)
-                     ),
-                     child: Padding(
-                       padding: const EdgeInsets.only(left:8.0),
-                       child: TextFormField(
-                         decoration: InputDecoration(
-                           border: InputBorder.none,
-                           prefixIcon: Icon(Icons.search,color: AppColors.base,size: 30,),
-                           hintText: "Search",
-                           hintStyle: TextStyle(color: AppColors.base)
-                         ),
-                       ),
-                     ),
-                   ),
-                   SizedBox(width: width/10,),
-
-                 ],
-               ),
-             ),
-              SizedBox(height: 20,),
-              Container(
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  children: [
+                    Container(
+                      height: height / 20,
+                      width: width / 1.4,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(20),
+                        border: Border.all(color: AppColors.base),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            border: InputBorder.none,
+                            // prefixIcon: Icon(
+                            //   Icons.search,
+                            //   color: AppColors.base,
+                            //   size: 30,
+                            // ),
+                            hintText: "Search",
+                            hintStyle: TextStyle(color: AppColors.base),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: width * 0.1,
+                    ),
+                    const Icon(
+                      Icons.search,
+                      color: AppColors.base,
+                      size: 30,
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              SizedBox(
                 width: width,
                 height: height / 5,
                 child: ListView.builder(
@@ -76,8 +97,15 @@ class _catagoryState extends State<catagory> {
                       return Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: InkWell(
-                          onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (_)=>catagory(catagry: "Dentist")));
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => catagory(
+                                  catagry: "Dentist",
+                                ),
+                              ),
+                            );
                           },
                           child: Container(
                             child: Column(
@@ -92,26 +120,32 @@ class _catagoryState extends State<catagory> {
                                         padding: EdgeInsets.all(8.0),
                                         child: Row(
                                           children: [
-                                            CircleAvatar(
-                                              backgroundImage:AssetImage("assets/images/d1.jpg"),
+                                            const CircleAvatar(
+                                              backgroundImage: AssetImage(
+                                                  "assets/images/d1.jpg"),
                                               maxRadius: 35,
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.all(8.0),
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
                                               child: Column(
-                                                crossAxisAlignment: CrossAxisAlignment.start,
-                                                children: [
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: const [
                                                   Text(
                                                     "Steve Jhon",
                                                     style: TextStyle(
                                                         color: Colors.white,
-                                                        fontWeight: FontWeight.bold,
+                                                        fontWeight:
+                                                            FontWeight.bold,
                                                         fontSize: 14),
-                                                  ), Text(
+                                                  ),
+                                                  Text(
                                                     "Dentiist . Amin Diagonastic",
                                                     style: TextStyle(
                                                         color: Colors.white,
-                                                        fontWeight: FontWeight.bold,
+                                                        fontWeight:
+                                                            FontWeight.bold,
                                                         fontSize: 14),
                                                   ),
                                                 ],
@@ -121,11 +155,11 @@ class _catagoryState extends State<catagory> {
                                         ),
                                       ),
                                       Padding(
-                                        padding: EdgeInsets.all(8.0),
+                                        padding: const EdgeInsets.all(8.0),
                                         child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          children: [
-
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: const [
                                             Text(
                                               "300 / hr",
                                               style: TextStyle(
@@ -136,11 +170,9 @@ class _catagoryState extends State<catagory> {
                                           ],
                                         ),
                                       ),
-
                                     ],
                                   ),
                                 ),
-
                               ],
                             ),
                           ),
@@ -148,7 +180,9 @@ class _catagoryState extends State<catagory> {
                       );
                     }),
               ),
-Divider(color: Colors.grey,),
+              Divider(
+                color: Colors.grey,
+              ),
               Container(
                 width: width,
                 child: ListView.builder(
@@ -158,28 +192,32 @@ Divider(color: Colors.grey,),
                     physics: NeverScrollableScrollPhysics(),
                     itemBuilder: (_, index) {
                       return InkWell(
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (_)=>doctor_profile()));
-
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => doctor_profile()));
                         },
                         child: Container(
-                          decoration: BoxDecoration(
-                          ),
-                          child:                                      Column(
+                          decoration: BoxDecoration(),
+                          child: Column(
                             children: [
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
                                     children: [
                                       CircleAvatar(
-                                        backgroundImage:AssetImage("assets/images/d1.jpg"),
+                                        backgroundImage:
+                                            AssetImage("assets/images/d1.jpg"),
                                         maxRadius: 35,
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.all(8.0),
                                         child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text(
                                               "Steve Jhon",
@@ -187,13 +225,15 @@ Divider(color: Colors.grey,),
                                                   color: Colors.black,
                                                   fontWeight: FontWeight.bold,
                                                   fontSize: 22),
-                                            ), Text(
+                                            ),
+                                            Text(
                                               "Dentiist . MBBS",
                                               style: TextStyle(
                                                   color: Colors.black,
                                                   fontWeight: FontWeight.bold,
                                                   fontSize: 14),
-                                            ), Text(
+                                            ),
+                                            Text(
                                               "10 years Experience",
                                               style: TextStyle(
                                                   color: Colors.grey,
@@ -215,23 +255,21 @@ Divider(color: Colors.grey,),
                                           fontSize: 14),
                                     ),
                                   ),
-
                                 ],
                               ),
                               Padding(
-                                padding: const EdgeInsets.only(left:18.0,right: 18),
-                                child: Divider(color: Colors.grey,),
+                                padding: const EdgeInsets.only(
+                                    left: 18.0, right: 18),
+                                child: Divider(
+                                  color: Colors.grey,
+                                ),
                               )
                             ],
                           ),
-
-
-
                         ),
                       );
                     }),
               ),
-
             ],
           ),
         ),

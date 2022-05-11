@@ -31,6 +31,8 @@ dependencies:
   intl: ^0.17.0
   image_picker: ^0.8.4+5
   show_up_animation: ^2.0.0
+  page_transition: ^2.0.5
+  textfield_tags: ^2.0.0+1
 dev_dependencies:
   flutter_test:
     sdk: flutter

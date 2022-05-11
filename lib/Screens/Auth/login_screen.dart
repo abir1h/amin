@@ -1,9 +1,11 @@
+import 'package:amin_diagonastic/Screens/Auth/forget_password.dart';
 import 'package:amin_diagonastic/Screens/Auth/regster_option.dart';
 import 'package:amin_diagonastic/Screens/Doctor/doctor_mainHome.dart';
 import 'package:amin_diagonastic/Screens/marketting_agent/home.dart';
 import 'package:amin_diagonastic/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+import 'package:page_transition/page_transition.dart';
 
 import '../MainHome.dart';
 
@@ -68,17 +70,28 @@ class _loginState extends State<login> {
                   decoration: const InputDecoration(hintText: "Password"),
                 ),
               ),
-              const Align(
+              Align(
                 alignment: Alignment.topRight,
-                child: Padding(
-                  padding: EdgeInsets.only(right: 20.0),
-                  child: Text(
-                    "Forget Password",
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.rightToLeft,
+                        child: const ForgetPassword(),
+                      ),
+                    );
+                  },
+                  child: const Padding(
+                    padding: EdgeInsets.only(right: 20.0),
+                    child: Text(
+                      "Forget Password",
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
               Padding(
