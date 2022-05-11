@@ -2,6 +2,7 @@ import 'package:amin_diagonastic/Screens/boarding.dart';
 import 'package:amin_diagonastic/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
+
 class otp extends StatefulWidget {
   @override
   _otpState createState() => _otpState();
@@ -32,25 +33,29 @@ class _otpState extends State<otp> {
           showCursor: false,
           readOnly: false,
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           keyboardType: TextInputType.number,
           maxLength: 1,
           decoration: InputDecoration(
-            counter: Offstage(),
+            counter: const Offstage(),
             enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(width: 2, color: Colors.black12),
-                borderRadius: BorderRadius.circular(12)),
+              borderSide: const BorderSide(width: 2, color: Colors.black12),
+              borderRadius: BorderRadius.circular(12),
+            ),
             focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(width: 2, color:AppColors.base),
-                borderRadius: BorderRadius.circular(12)),
+              borderSide: const BorderSide(width: 2, color: AppColors.base),
+              borderRadius: BorderRadius.circular(12),
+            ),
           ),
         ),
       ),
     );
   }
+
   @override
-  Widget build(BuildContext context) { var height = MediaQuery.of(context).size.height;
-  var width = MediaQuery.of(context).size.width;
+  Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height;
+    var width = MediaQuery.of(context).size.width;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xfff7f6fb),
@@ -72,54 +77,62 @@ class _otpState extends State<otp> {
             ClipPath(
               clipper: WaveClipperTwo(flip: false),
               child: Container(
-                height: MediaQuery.of(context).size.height/4,
-                decoration: BoxDecoration(
+                height: MediaQuery.of(context).size.height / 4,
+                decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topRight,
                     end: Alignment.bottomLeft,
                     colors: [
                       Color(0xFFB81C2B),
                       Color(0xFF7B0C16),
-
                     ],
-                  ),),
-                child: Center(child: Text("OTP Verification",style: TextStyle(
-                  fontWeight: FontWeight.bold,color: Colors.white
-                ),),),
+                  ),
+                ),
+                child: const Center(
+                  child: Text(
+                    "OTP Verification",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      fontSize: 34,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
               ),
             ),
 
-            SizedBox(
+            const SizedBox(
               height: 24,
             ),
-            Text(
-              'Verification',
+            const Text(
+              'An authentication code has been sent to ',
               style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
+                fontSize: 17,
+                fontWeight: FontWeight.w400,
+                color: Color(0xff979797),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
-              "Enter your OTP code number",
+            const Text(
+              "(+880) 1xxxxxxxxx",
               style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                color: Colors.black38,
+                fontSize: 17,
+                fontWeight: FontWeight.w400,
+                color: Color(0xff9D9D9D),
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(
+            const SizedBox(
               height: 28,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 24, horizontal: 32),
+              padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 32),
               child: Container(
-                padding: EdgeInsets.all(28),
+                padding: const EdgeInsets.all(28),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Colors.transparent,
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Column(
@@ -128,114 +141,130 @@ class _otpState extends State<otp> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Expanded(
-                            child: _textFieldOTP(
-                                first: true,
-                                last: false,
-                                controller_: otp_1)),
-                        SizedBox(
+                          child: _textFieldOTP(
+                            first: true,
+                            last: false,
+                            controller_: otp_1,
+                          ),
+                        ),
+                        const SizedBox(
                           width: 5,
                         ),
                         Expanded(
-                            child: _textFieldOTP(
-                                first: false,
-                                last: false,
-                                controller_: otp_2)),
-                        SizedBox(
+                          child: _textFieldOTP(
+                            first: false,
+                            last: false,
+                            controller_: otp_2,
+                          ),
+                        ),
+                        const SizedBox(
                           width: 5,
                         ),
                         Expanded(
-                            child: _textFieldOTP(
-                                first: false,
-                                last: false,
-                                controller_: otp_3)),
-                        SizedBox(
+                          child: _textFieldOTP(
+                            first: false,
+                            last: false,
+                            controller_: otp_3,
+                          ),
+                        ),
+                        const SizedBox(
                           width: 5,
                         ),
                         Expanded(
-                            child: _textFieldOTP(
-                                first: false,
-                                last: true,
-                                controller_: otp_4)),
+                          child: _textFieldOTP(
+                            first: false,
+                            last: true,
+                            controller_: otp_4,
+                          ),
+                        ),
                       ],
                     ),
-                    SizedBox(
-                      height: 22,
+                    const SizedBox(
+                      height: 15,
                     ),
-                    SizedBox(
-                      width: double.infinity,
-                      child: ElevatedButton(
-                        onPressed: () {
-                          // role_of=='teacher'?otpconfirm_teacher()
-                          // print('u');
-                          // print(otp_1.text +
-                          //     otp_2.text +
-                          //     otp_3.text +
-                          //     otp_4.text);
-                          // role_of == 'teacher'
-                          //     ? otpconfirm_teacher(otp_1.text +
-                          //     otp_2.text +
-                          //     otp_3.text +
-                          //     otp_4.text)
-                          //     : otpconfirm_school(otp_1.text +
-                          //     otp_2.text +
-                          //     otp_3.text +
-                          //     otp_4.text);
-                          Navigator.push(context, MaterialPageRoute(builder: (_)=>OnBoardingPage()));
-
-                        },
-                        style: ButtonStyle(
-                          foregroundColor:
-                          MaterialStateProperty.all<Color>(Colors.white),
-                          backgroundColor:
-                          MaterialStateProperty.all<Color>(AppColors.base),
-                          shape: MaterialStateProperty.all<
-                              RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(24.0),
-                            ),
-                          ),
-                        ),
-                        child: Padding(
-                          padding: EdgeInsets.all(14.0),
-                          child: Text(
-                            'Verify',
-                            style: TextStyle(fontSize: 16),
-                          ),
-                        ),
-                      ),
-                    )
                   ],
                 ),
               ),
             ),
-            SizedBox(
-              height: 18,
+            const SizedBox(
+              height: 10,
             ),
-            Text(
-              "Didn't you receive any code?",
-              style: TextStyle(
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                color: Colors.black38,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Text(
+                  "I didn't receive code",
+                  style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.black38,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(width: 5),
+                Text(
+                  "Resend Code",
+                  style: TextStyle(
+                    fontSize: 17,
+                    fontWeight: FontWeight.w400,
+                    color: Colors.blue,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 32),
+              child: SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: () {
+                    // role_of=='teacher'?otpconfirm_teacher()
+                    // print('u');
+                    // print(otp_1.text +
+                    //     otp_2.text +
+                    //     otp_3.text +
+                    //     otp_4.text);
+                    // role_of == 'teacher'
+                    //     ? otpconfirm_teacher(otp_1.text +
+                    //     otp_2.text +
+                    //     otp_3.text +
+                    //     otp_4.text)
+                    //     : otpconfirm_school(otp_1.text +
+                    //     otp_2.text +
+                    //     otp_3.text +
+                    //     otp_4.text);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => OnBoardingPage(),
+                      ),
+                    );
+                  },
+                  style: ButtonStyle(
+                    foregroundColor:
+                        MaterialStateProperty.all<Color>(Colors.white),
+                    backgroundColor:
+                        MaterialStateProperty.all<Color>(AppColors.base),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(24.0),
+                      ),
+                    ),
+                  ),
+                  child: const Padding(
+                    padding: EdgeInsets.all(14.0),
+                    child: Text(
+                      'Verify',
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ),
+                ),
               ),
-              textAlign: TextAlign.center,
-            ),
-            SizedBox(
-              height: 18,
-            ),
-            Text(
-              "Resend New Code",
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.blue,
-              ),
-              textAlign: TextAlign.center,
-            ),
+            )
           ],
         ),
       ),
     );
-
   }
 }
