@@ -3,6 +3,9 @@ import 'package:amin_diagonastic/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 
+import '../settings/change_password.dart';
+import 'forget_set_password.dart';
+
 class ForgetPassword extends StatefulWidget {
   const ForgetPassword({Key? key}) : super(key: key);
 
@@ -273,7 +276,8 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (_) => OnBoardingPage(),
+                                // builder: (_) => OnBoardingPage(),
+                                builder: (_) => const ForgetSetPassword(),
                               ),
                             );
                           },
