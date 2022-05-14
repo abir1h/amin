@@ -2,129 +2,210 @@ import 'package:amin_diagonastic/utils/colors.dart';
 import 'package:flutter/material.dart';
 
 import 'MainHome.dart';
-class success extends StatefulWidget {
+
+class Success extends StatefulWidget {
+  const Success({Key? key}) : super(key: key);
+
   @override
-  _successState createState() => _successState();
+  _SuccessState createState() => _SuccessState();
 }
 
-class _successState extends State<success> {
+class _SuccessState extends State<Success> {
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-    return SafeArea(child: Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-SizedBox(height: 40,),
-              Center(child: Icon(Icons.check_circle,color: Colors.green,size: 60,)),
-              Text("Success!",style: TextStyle(
-                  color: Colors.black,fontWeight: FontWeight.bold,fontSize: 30
-              ),),  Center(
-                child: Text("Thank you for chosing ",style: TextStyle(
-                    color: Colors.grey,fontWeight: FontWeight.bold,fontSize: 18,
-                ),),
-              ), Center(
-                child: Text("chosing our  service and trust our doctors ",style: TextStyle(
-                    color: Colors.grey,fontWeight: FontWeight.bold,fontSize: 18,
-                ),),
-              ),Center(
-                child: Text(" to take",style: TextStyle(
-                    color: Colors.grey,fontWeight: FontWeight.bold,fontSize: 18,
-                ),),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Container(
-                  width: width,
-                  decoration: BoxDecoration(
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SizedBox(height: height * 0.02),
+                const Center(
+                  child: Icon(
+                    Icons.check_circle,
+                    color: Color(0xff00C82F),
+                    size: 60,
+                  ),
+                ),
+                SizedBox(height: height * 0.01),
+                const Text(
+                  "Success!",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 50,
+                  ),
+                ),
+                SizedBox(height: height * 0.01),
+                const Center(
+                  child: Text(
+                    "Thank you for chosing our\nservice and trust our doctors to take",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Color(0xff5A5A5A),
+                      fontWeight: FontWeight.w400,
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+                SizedBox(height: height * 0.01),
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                    horizontal: width * 0.11,
+                    vertical: height * 0.02,
+                  ),
+                  child: Container(
+                    width: width,
+                    decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.2),
-
-                          spreadRadius: 5,
-
+                          spreadRadius: 1,
                           blurRadius: 7,
-
-                          offset: Offset(
-                              0, 3), // changes position of shadow
-                        ),]
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        CircleAvatar(
-                          backgroundImage:AssetImage("assets/images/d1.jpg"),
-                          maxRadius: 30,
+                          offset: const Offset(0, 5),
                         ),
-                        Text("Barbara Michel",style: TextStyle(
-                            color: Colors.black,fontWeight: FontWeight.bold,fontSize: 22
-                        ),),
-                        Text("Blood Test",style: TextStyle(
-                            color: Colors.grey,fontWeight: FontWeight.bold,fontSize: 16
-                        ),),
-
-                        SizedBox(height: 10,),
-                        Text("Date & Time",style: TextStyle(
-                            color: Colors.grey,fontWeight: FontWeight.bold,fontSize: 16
-                        ),),
-                        Text("Wednessday, December 18",style: TextStyle(
-                            color: Colors.black,fontWeight: FontWeight.bold,fontSize: 22
-                        ),), SizedBox(height: 10,),
-                        Text("Address",style: TextStyle(
-                            color: Colors.grey,fontWeight: FontWeight.bold,fontSize: 16
-                        ),),
-                        Text("Amin Digonastic",style: TextStyle(
-                            color: Colors.black,fontWeight: FontWeight.bold,fontSize: 22
-                        ),),Text("Uptime",style: TextStyle(
-                            color: Colors.grey,fontWeight: FontWeight.bold,fontSize: 16
-                        ),),
-                        Text("9 AM - 9 PM",style: TextStyle(
-                            color: Colors.black,fontWeight: FontWeight.bold,fontSize: 18
-                        ),),
-                        SizedBox(height: 40,),
-
-
                       ],
-
                     ),
-                  ),
-                ),
-              ),
-              Center(
-                child: InkWell(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (_)=>MainHome()));
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        color: AppColors.base
-                    ),
-                    child:  Padding(
-                      padding: const EdgeInsets.only(left: 18.0,right: 18,top: 5,bottom: 5),
-                      child: Text(
-                        "Back to home",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 22),
+                    child: Padding(
+                      padding: const EdgeInsets.all(15.0),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          const CircleAvatar(
+                            backgroundImage: AssetImage("assets/images/d1.jpg"),
+                            maxRadius: 37.2,
+                          ),
+                          const Text(
+                            "Barbara Michel",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 24,
+                            ),
+                          ),
+                          const Text(
+                            "Dentist",
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 15,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.02),
+                          const Text(
+                            "Date",
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 16,
+                            ),
+                          ),
+                          const Text(
+                            "Wednessday, December 18",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 20,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.02),
+                          const Text(
+                            "Address",
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 16,
+                            ),
+                          ),
+                          const Text(
+                            "Amin Diagnostic Center",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 20,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.02),
+                          const Text(
+                            "Uptime",
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 16,
+                            ),
+                          ),
+                          const Text(
+                            "09:00 AM- 09:00 PM",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12,
+                            ),
+                          ),
+                          SizedBox(height: height * 0.02),
+                          const Text(
+                            "Token",
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 16,
+                            ),
+                          ),
+                          const Text(
+                            "107",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
                 ),
-              )
-            ],
+                SizedBox(height: height * 0.02),
+                Center(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const MainHome(),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(5),
+                          color: AppColors.base),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: width * 0.1, vertical: height * 0.015),
+                        child: const Text(
+                          "Back to home",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 22,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),
-    ));
+    );
   }
 }

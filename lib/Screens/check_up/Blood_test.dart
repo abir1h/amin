@@ -143,7 +143,7 @@ class _TestScreenState extends State<TestScreen> {
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
-                        context, MaterialPageRoute(builder: (_) => success()));
+                        context, MaterialPageRoute(builder: (_) => Success()));
                   },
                   child: Container(
                     decoration: BoxDecoration(

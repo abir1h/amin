@@ -114,10 +114,11 @@ class _loginState extends State<login> {
                             height: MediaQuery.of(context).size.height / 12,
                             width: MediaQuery.of(context).size.width / 4,
                             decoration: BoxDecoration(
-                                color: doctor_selected == false
-                                    ? AppColors.base
-                                    : Colors.red,
-                                borderRadius: BorderRadius.circular(15)),
+                              color: doctor_selected == false
+                                  ? AppColors.base
+                                  : Colors.red,
+                              borderRadius: BorderRadius.circular(15),
+                            ),
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Image.asset('assets/images/doc.png'),
@@ -127,9 +128,10 @@ class _loginState extends State<login> {
                         const Text(
                           'Doctor',
                           style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ],
                     ),
@@ -152,10 +154,11 @@ class _loginState extends State<login> {
                             height: MediaQuery.of(context).size.height / 12,
                             width: MediaQuery.of(context).size.width / 4,
                             decoration: BoxDecoration(
-                                color: patient_selected == false
-                                    ? AppColors.base
-                                    : Colors.red,
-                                borderRadius: BorderRadius.circular(15)),
+                              color: patient_selected == false
+                                  ? AppColors.base
+                                  : Colors.red,
+                              borderRadius: BorderRadius.circular(15),
+                            ),
                             child: Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Image.asset('assets/images/pat.png'),
@@ -165,9 +168,10 @@ class _loginState extends State<login> {
                         const Text(
                           'Patient',
                           style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
+                            color: Colors.black,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ],
                     ),
@@ -191,10 +195,11 @@ class _loginState extends State<login> {
                               height: MediaQuery.of(context).size.height / 12,
                               width: MediaQuery.of(context).size.width / 4,
                               decoration: BoxDecoration(
-                                  color: m_agent == false
-                                      ? AppColors.base
-                                      : Colors.red,
-                                  borderRadius: BorderRadius.circular(15)),
+                                color: m_agent == false
+                                    ? AppColors.base
+                                    : Colors.red,
+                                borderRadius: BorderRadius.circular(15),
+                              ),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
                                 child: Image.asset('assets/images/pat.png'),
@@ -204,9 +209,10 @@ class _loginState extends State<login> {
                           const Text(
                             ' Agent',
                             style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold),
+                              color: Colors.black,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ],
                       ),
@@ -214,22 +220,32 @@ class _loginState extends State<login> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 25,
-              ),
+              const SizedBox(height: 25),
               Center(
                 child: InkWell(
                   onTap: () {
                     print(doctor_selected);
                     if (doctor == '0') {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (_) => MainHome()));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const MainHome(),
+                        ),
+                      );
                     } else if (doctor == '1') {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (_) => doctor_mainHome()));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => doctor_mainHome(),
+                        ),
+                      );
                     } else {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (_) => agent_home()));
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => agent_home(),
+                        ),
+                      );
                     }
                   },
                   child: Container(

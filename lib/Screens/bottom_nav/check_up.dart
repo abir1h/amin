@@ -35,8 +35,13 @@ class _checkupState extends State<checkup> {
                     },
                   ),
                   IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.search, color: Colors.black, size: 30))
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.search,
+                      color: Colors.black,
+                      size: 30,
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -48,9 +53,10 @@ class _checkupState extends State<checkup> {
               child: Text(
                 "Tests",
                 style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 25),
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
+                ),
               ),
             ),
             const SizedBox(
@@ -58,6 +64,50 @@ class _checkupState extends State<checkup> {
             ),
             Row(
               children: [
+                Expanded(
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          child: const TestScreen(testName: 'Eye'),
+                        ),
+                      );
+                    },
+                    child: Column(
+                      children: [
+                        Container(
+                          width: width / 3,
+                          decoration: BoxDecoration(
+                            color: AppColors.base,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Column(
+                            children: [
+                              SvgPicture.asset(
+                                'assets/images/eye.svg',
+                                height: width * 0.25,
+                                color: Colors.white,
+                              )
+                            ],
+                          ),
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Text(
+                            "Eye Test",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
                 Expanded(
                   child: InkWell(
                     onTap: () {
@@ -77,17 +127,15 @@ class _checkupState extends State<checkup> {
                             color: AppColors.base,
                             borderRadius: BorderRadius.circular(12),
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                SvgPicture.asset(
-                                  'assets/images/bl.svg',
-                                  height: 100,
-                                  color: Colors.white,
-                                )
-                              ],
-                            ),
+                          child: Column(
+                            children: [
+                              SvgPicture.asset(
+                                'assets/images/bl.svg',
+                                height: width * 0.25,
+                                color: Colors.white,
+                                fit: BoxFit.cover,
+                              )
+                            ],
                           ),
                         ),
                         const Padding(
@@ -99,51 +147,6 @@ class _checkupState extends State<checkup> {
                               fontWeight: FontWeight.bold,
                               fontSize: 14,
                             ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        PageTransition(
-                          type: PageTransitionType.rightToLeft,
-                          child: const TestScreen(testName: 'Eye'),
-                        ),
-                      );
-                    },
-                    child: Column(
-                      children: [
-                        Container(
-                          width: width / 3,
-                          decoration: BoxDecoration(
-                              color: AppColors.base,
-                              borderRadius: BorderRadius.circular(12)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                SvgPicture.asset(
-                                  'assets/images/eye.svg',
-                                  height: 100,
-                                  color: Colors.white,
-                                )
-                              ],
-                            ),
-                          ),
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Text(
-                            "Eye Test",
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14),
                           ),
                         ),
                       ],
@@ -175,17 +178,14 @@ class _checkupState extends State<checkup> {
                           decoration: BoxDecoration(
                               color: AppColors.base,
                               borderRadius: BorderRadius.circular(12)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                SvgPicture.asset(
-                                  'assets/images/covid.svg',
-                                  height: 100,
-                                  color: Colors.white,
-                                )
-                              ],
-                            ),
+                          child: Column(
+                            children: [
+                              SvgPicture.asset(
+                                'assets/images/covid.svg',
+                                height: width * 0.25,
+                                color: Colors.white,
+                              )
+                            ],
                           ),
                         ),
                         const Padding(
@@ -221,17 +221,14 @@ class _checkupState extends State<checkup> {
                           decoration: BoxDecoration(
                               color: AppColors.base,
                               borderRadius: BorderRadius.circular(12)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                SvgPicture.asset(
-                                  'assets/images/medicine.svg',
-                                  height: 100,
-                                  color: Colors.white,
-                                )
-                              ],
-                            ),
+                          child: Column(
+                            children: [
+                              SvgPicture.asset(
+                                'assets/images/medicine.svg',
+                                height: width * 0.25,
+                                color: Colors.white,
+                              )
+                            ],
                           ),
                         ),
                         const Padding(
@@ -269,18 +266,18 @@ class _checkupState extends State<checkup> {
                     },
                     child: Column(
                       children: [
-                        Container(
-                          width: width / 3,
-                          decoration: BoxDecoration(
-                              color: AppColors.base,
-                              borderRadius: BorderRadius.circular(12)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            width: width / 3,
+                            decoration: BoxDecoration(
+                                color: AppColors.base,
+                                borderRadius: BorderRadius.circular(12)),
                             child: Column(
                               children: [
                                 SvgPicture.asset(
                                   'assets/images/ultra.svg',
-                                  height: 100,
+                                  height: width * 0.25,
                                   color: Colors.white,
                                 )
                               ],
@@ -292,9 +289,10 @@ class _checkupState extends State<checkup> {
                           child: Text(
                             "Ultrasonography Test",
                             style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14),
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                            ),
                           ),
                         ),
                       ],
@@ -317,29 +315,28 @@ class _checkupState extends State<checkup> {
                         Container(
                           width: width / 3,
                           decoration: BoxDecoration(
-                              color: AppColors.base,
-                              borderRadius: BorderRadius.circular(12)),
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: [
-                                SvgPicture.asset(
-                                  'assets/images/xr.svg',
-                                  height: 100,
-                                  color: Colors.white,
-                                )
-                              ],
-                            ),
+                            color: AppColors.base,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          child: Column(
+                            children: [
+                              SvgPicture.asset(
+                                'assets/images/xr.svg',
+                                height: width * 0.25,
+                                color: Colors.white,
+                              )
+                            ],
                           ),
                         ),
-                        Padding(
+                        const Padding(
                           padding: EdgeInsets.all(8.0),
                           child: Text(
                             "X-Ray Test",
                             style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 14),
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                            ),
                           ),
                         ),
                       ],

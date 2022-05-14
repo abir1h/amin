@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-
   static const Color userOnlineColor = Colors.green;
   static const Color userAwayColor = Colors.grey;
   static const Color userDNDColor = Colors.black;
@@ -17,11 +16,11 @@ class AppColors {
   static const Color defTextColor = Colors.black;
   static const Color altTextColor = Colors.white;
 
-
   static const backgroundColor = Colors.white;
   static const whiteColor = Colors.white;
 
   static const amin = Color(0xFFBE1E2D);
+  static const amin_lite = Color(0xffFF7582);
   static const base = Color(0xFFBE1E2D);
   static const light_base = Color(0xFFFF394D);
   static const gradient_light = Color(0xFF7B0C16);

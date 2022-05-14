@@ -196,7 +196,7 @@ class _catagoryState extends State<catagory> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (_) => doctor_profile()));
+                                  builder: (_) => DoctorProfile()));
                         },
                         child: Container(
                           decoration: BoxDecoration(),

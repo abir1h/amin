@@ -13,55 +13,61 @@ class _search_uniState extends State<search_uni> {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
     return SafeArea(
-        child: Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.only(left: 18.0),
+      child: Scaffold(
+        body: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                children: [
-                  IconButton(
-                    icon: const Icon(
-                      Icons.arrow_back_ios,
-                      color: Colors.black,
+              SizedBox(height: height * 0.02),
+              Padding(
+                padding: EdgeInsets.only(left: width * 0.03),
+                child: Row(
+                  children: [
+                    IconButton(
+                      icon: const Icon(
+                        Icons.arrow_back_ios,
+                        color: Colors.black,
+                      ),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                     ),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Container(
-                          height: height / 22,
-                          width: width / 1.6,
-                          decoration: BoxDecoration(
+                    Padding(
+                      padding: EdgeInsets.all(height * 0.01),
+                      child: Row(
+                        children: [
+                          Container(
+                            height: height * 0.05,
+                            width: width * 0.65,
+                            decoration: BoxDecoration(
                               color: Colors.white,
-                              borderRadius: BorderRadius.circular(25),
-                              border: Border.all(color: AppColors.base)),
-                          child: Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                prefixIcon: Icon(
-                                  Icons.search,
-                                  color: AppColors.base,
-                                  size: 30,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(
+                                color: AppColors.base,
+                              ),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsets.only(left: width * 0.02),
+                              child: TextFormField(
+                                decoration: const InputDecoration(
+                                  border: InputBorder.none,
+                                  hintText: "Search",
+                                  hintStyle: TextStyle(color: Colors.grey),
                                 ),
-                                hintText: "Search",
-                                hintStyle: TextStyle(color: AppColors.base),
-                                border: InputBorder.none,
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                          SizedBox(width: width * 0.05),
+                          const Icon(
+                            Icons.search,
+                            color: AppColors.base,
+                            size: 30,
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               // Padding(
               //   padding: EdgeInsets.all(8.0),
@@ -267,31 +273,44 @@ class _search_uniState extends State<search_uni> {
               //       }),
               // ),
               Container(
-                margin: const EdgeInsets.only(left: 55),
+                margin: EdgeInsets.only(left: width * 0.14),
+                padding: EdgeInsets.only(left: width * 0.03),
                 child: Row(
                   children: [
                     Container(
+                      height: height * 0.04,
+                      width: width * 0.15,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: width * 0.015,
+                        vertical: height * 0.005,
+                      ),
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: AppColors.base),
-                      child: const Padding(
-                        padding: EdgeInsets.all(3.0),
+                        borderRadius: BorderRadius.circular(10),
+                        color: AppColors.amin_lite,
+                      ),
+                      child: const Center(
                         child: Text(
                           'Doctor',
                           style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),
-                    const SizedBox(
-                      width: 15,
-                    ),
+                    SizedBox(width: width * 0.05),
                     Container(
+                      height: height * 0.04,
+                      width: width * 0.15,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: width * 0.015,
+                        vertical: height * 0.005,
+                      ),
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: AppColors.base),
-                      child: const Padding(
-                        padding: EdgeInsets.all(3.0),
+                        borderRadius: BorderRadius.circular(10),
+                        color: AppColors.amin_lite,
+                      ),
+                      child: const Center(
                         child: Text(
                           'Test',
                           style: TextStyle(
@@ -299,15 +318,19 @@ class _search_uniState extends State<search_uni> {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: 15,
-                    ),
+                    SizedBox(width: width * 0.05),
                     Container(
+                      height: height * 0.04,
+                      width: width * 0.15,
+                      padding: EdgeInsets.symmetric(
+                        horizontal: width * 0.015,
+                        vertical: height * 0.005,
+                      ),
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: AppColors.base),
-                      child: Padding(
-                        padding: const EdgeInsets.all(3.0),
+                        borderRadius: BorderRadius.circular(10),
+                        color: AppColors.amin_lite,
+                      ),
+                      child: const Center(
                         child: Text(
                           'Post',
                           style: TextStyle(
@@ -315,119 +338,123 @@ class _search_uniState extends State<search_uni> {
                         ),
                       ),
                     ),
-                    SizedBox(
-                      width: 15,
-                    )
+                    SizedBox(width: width * 0.05),
                   ],
                 ),
               ),
+
               Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Suggested",
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 25),
-                    ),
-                  ],
+                padding: EdgeInsets.symmetric(vertical: height * 0.02),
+                child: Container(
+                  color: Colors.grey,
+                  height: 2,
+                  width: width,
                 ),
               ),
-              Container(
-                child: ListView.builder(
-                    itemCount: 10,
-                    scrollDirection: Axis.vertical,
-                    shrinkWrap: true,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemBuilder: (_, index) {
-                      return Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(29),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.grey.withOpacity(0.2),
-
-                                      spreadRadius: 5,
-
-                                      blurRadius: 7,
-
-                                      offset: Offset(
-                                          0, 3), // changes position of shadow
+              ListView.builder(
+                itemCount: 10,
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemBuilder: (_, index) {
+                  return Padding(
+                    padding: EdgeInsets.symmetric(horizontal: width * 0.02),
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: width * 0.02,
+                        vertical: height * 0.01,
+                      ),
+                      child: Container(
+                        height: height * 0.13,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.2),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset: const Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: width * 0.03,
+                                    vertical: height * 0.02,
+                                  ),
+                                  child: Container(
+                                    height: height / 11,
+                                    width: width / 6.5,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: const DecorationImage(
+                                        image:
+                                            AssetImage('assets/images/d1.jpg'),
+                                        fit: BoxFit.cover,
+                                      ),
                                     ),
-                                  ]),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Row(
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: width * 0.02,
+                                    vertical: height * 0.02,
+                                  ),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Container(
-                                          height: height / 11,
-                                          width: width / 6.5,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                              image: DecorationImage(
-                                                  image: AssetImage(
-                                                      'assets/images/d1.jpg'),
-                                                  fit: BoxFit.cover)),
+                                      const Text(
+                                        "Tomas Anderson",
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 18,
                                         ),
                                       ),
-                                      Padding(
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              "Tomas Anderson",
-                                              style: TextStyle(
-                                                  color: Colors.black,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 18),
-                                            ),
-                                            Text(
-                                              "Dentis - 10 years Experience",
-                                              style: TextStyle(
-                                                  color: Colors.grey,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 14),
-                                            )
-                                          ],
+                                      SizedBox(height: height * 0.02),
+                                      const Text(
+                                        "Dentis - 10 years Experience",
+                                        style: TextStyle(
+                                          color: Colors.black,
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 12,
                                         ),
                                       )
                                     ],
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Text(
-                                      "400/ pv",
-                                      style: TextStyle(
-                                          color: Colors.black,
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 16),
-                                    ),
-                                  )
-                                ],
-                              )),
+                                )
+                              ],
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.all(8.0),
+                              child: Text(
+                                "BDT 400/ pv",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 12,
+                                ),
+                              ),
+                            )
+                          ],
                         ),
-                      );
-                    }),
+                      ),
+                    ),
+                  );
+                },
               ),
             ],
           ),
         ),
       ),
-    ));
+    );
   }
 }
