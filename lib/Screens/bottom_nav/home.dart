@@ -81,6 +81,7 @@ class _homeState extends State<home> {
                               color: Colors.white,
                             ),
                           ),
+                          SizedBox(width: width * 0.02),
                           IconButton(
                             onPressed: () {
                               Navigator.push(

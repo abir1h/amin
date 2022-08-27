@@ -57,11 +57,11 @@ class _search_uniState extends State<search_uni> {
                               ),
                             ),
                           ),
-                          SizedBox(width: width * 0.05),
+                          SizedBox(width: width * 0.02),
                           const Icon(
                             Icons.search,
                             color: AppColors.base,
-                            size: 30,
+                            size: 40,
                           ),
                         ],
                       ),
@@ -279,13 +279,13 @@ class _search_uniState extends State<search_uni> {
                   children: [
                     Container(
                       height: height * 0.04,
-                      width: width * 0.15,
+                      width: width * 0.185,
                       padding: EdgeInsets.symmetric(
                         horizontal: width * 0.015,
                         vertical: height * 0.005,
                       ),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(50),
                         color: AppColors.amin_lite,
                       ),
                       child: const Center(
@@ -301,13 +301,13 @@ class _search_uniState extends State<search_uni> {
                     SizedBox(width: width * 0.05),
                     Container(
                       height: height * 0.04,
-                      width: width * 0.15,
+                      width: width * 0.185,
                       padding: EdgeInsets.symmetric(
                         horizontal: width * 0.015,
                         vertical: height * 0.005,
                       ),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(50),
                         color: AppColors.amin_lite,
                       ),
                       child: const Center(
@@ -321,13 +321,13 @@ class _search_uniState extends State<search_uni> {
                     SizedBox(width: width * 0.05),
                     Container(
                       height: height * 0.04,
-                      width: width * 0.15,
+                      width: width * 0.185,
                       padding: EdgeInsets.symmetric(
                         horizontal: width * 0.015,
                         vertical: height * 0.005,
                       ),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
+                        borderRadius: BorderRadius.circular(50),
                         color: AppColors.amin_lite,
                       ),
                       child: const Center(

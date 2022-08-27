@@ -322,7 +322,7 @@ class _profileState extends State<profile> {
                       ),
                       SizedBox(height: height * 0.01),
                       Padding(
-                        padding: EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(8.0),
                         child: InkWell(
                           onTap: () {
                             Navigator.push(
@@ -1290,7 +1290,9 @@ class _CustomDialogState extends State<CustomDialog> {
                           width: 85,
                           decoration: const BoxDecoration(
                             color: AppColors.amin,
-                            borderRadius: BorderRadius.all(Radius.circular(5)),
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(5),
+                            ),
                           ),
                           child: const Center(
                             child: Text(

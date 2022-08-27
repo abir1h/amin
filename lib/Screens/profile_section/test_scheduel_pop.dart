@@ -161,22 +161,27 @@ class _test_scedule_popState extends State<test_scedule_pop> {
                   },
                   child: Center(
                     child: Container(
+                      height: height * 0.06,
+                      width: width * 0.4,
                       decoration: BoxDecoration(
-                          color: AppColors.base,
-                          borderRadius: BorderRadius.circular(10)),
-                      child: const Padding(
-                        padding: EdgeInsets.all(8.0),
+                        color: AppColors.base,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: const Center(
                         child: Text(
                           "Submit",
                           style: TextStyle(
-                              color: Colors.white, fontWeight: FontWeight.bold),
+                            color: Colors.white,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 20,
+                          ),
                         ),
                       ),
                     ),
                   ),
                 )
               ],
-            )
+            ),
           ],
         ),
       ),

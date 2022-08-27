@@ -4,6 +4,9 @@ import 'package:amin_diagonastic/utils/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:page_transition/page_transition.dart';
+
+import '../search/search.dart';
 
 class search extends StatefulWidget {
   @override
@@ -24,24 +27,35 @@ class _searchState extends State<search> {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
-                  Padding(
+                children: [
+                  const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
                       "Search",
                       style: TextStyle(
                         color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 24,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 31,
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(8.0),
-                    child: Icon(
-                      Icons.search,
-                      color: Colors.black,
-                      size: 30,
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        PageTransition(
+                          type: PageTransitionType.rightToLeft,
+                          child: search_uni(),
+                        ),
+                      );
+                    },
+                    child: const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Icon(
+                        Icons.search,
+                        color: Colors.black,
+                        size: 40,
+                      ),
                     ),
                   )
                 ],

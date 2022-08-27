@@ -1,7 +1,6 @@
 import 'package:amin_diagonastic/Screens/Auth/login_screen.dart';
 import 'package:amin_diagonastic/utils/colors.dart';
 import 'package:flutter/material.dart';
-import 'package:page_transition/page_transition.dart';
 
 import '../boarding.dart';
 

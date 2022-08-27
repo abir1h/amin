@@ -1,9 +1,10 @@
 import 'package:amin_diagonastic/Screens/success.dart';
 import 'package:amin_diagonastic/utils/colors.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
+
+import '../success.dart';
 
 class GetAppointment extends StatefulWidget {
   const GetAppointment({Key? key}) : super(key: key);
@@ -19,6 +20,8 @@ class _GetAppointmentState extends State<GetAppointment> {
   String? formattedDate;
   @override
   Widget build(BuildContext context) {
+    final double height = MediaQuery.of(context).size.height;
+    final double width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
@@ -54,9 +57,7 @@ class _GetAppointmentState extends State<GetAppointment> {
                 child: TextFormField(
                     decoration: InputDecoration(hintText: "Phone Number")),
               ),
-              SizedBox(
-                height: 10,
-              ),
+              SizedBox(height: height * 0.05),
               TableCalendar(
                 focusedDay: selectedDay,
                 firstDay: DateTime(1990),
@@ -120,9 +121,7 @@ class _GetAppointmentState extends State<GetAppointment> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 25,
-              ),
+              SizedBox(height: height * 0.1),
               Center(
                 child: InkWell(
                   onTap: () {

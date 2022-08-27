@@ -22,7 +22,7 @@ class _RegisterState extends State<Register> {
             ClipPath(
               clipper: WaveClipperTwo(flip: false),
               child: Container(
-                height: MediaQuery.of(context).size.height / 4,
+                height: MediaQuery.of(context).size.height * 0.4,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topRight,
@@ -99,7 +99,11 @@ class _RegisterState extends State<Register> {
               child: InkWell(
                 onTap: () {
                   Navigator.push(
-                      context, MaterialPageRoute(builder: (_) => otp()));
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => otp(),
+                    ),
+                  );
                 },
                 child: Container(
                   width: 200,
@@ -143,11 +147,10 @@ class _RegisterState extends State<Register> {
                       );
                     },
                     child: const Text(
-                      "Sign in",
+                      "Log in",
                       style: TextStyle(
                         color: AppColors.base,
                         fontWeight: FontWeight.bold,
-                        decoration: TextDecoration.underline,
                       ),
                     ),
                   ),
